@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blog.dao.IUserDao">
+  <resultMap type="com.blog.model.User" id="UserMap">
+    <id column="id" property="id" javaType="Integer"/>
+    <result column="email" property="email" javaType="String"/>
+    <result column="password" property="password" javaType="String"/>
+    <result column="email_verify_code" property="emailVerifyCode" javaType="String"/>
+    <result column="email_verified" property="emailVerified" javaType="boolean"/>
+  </resultMap>
+  
+  <select id="find" parameterType="Integer" resultMap="UserMap">
+    select id,email,password,is_email_verified from user where id=#{id};
+  </select>
+  
+  <delete id="delete" parameterType="Integer">
+    delete from user where id=#{id};
+  </delete>
+  
+  <insert id="insertOne" parameterType="com.blog.model.User">
+    <selectKey resultType="int" keyProperty="id" order="AFTER">
+      select last_insert_id() as id;
+    </selectKey>
+    insert into user(email,password,email_verify_code) 
+    values(#{email},#{password},#{emailVerifyCode});
+  </insert>
+<!--   <insert id="insertOne" parameterType="com.blog.model.User" useGeneratedKeys="true" keyProperty="id">
+    insert into user(email,password,email_verify_code) 
+    values(#{email},#{password},#{emailVerifyCode});     
+  </insert> -->
+  
+</mapper>
