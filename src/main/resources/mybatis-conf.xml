@@ -3,6 +3,10 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+  <typeAliases>
+    <package name="com.blog.model"/>
+  </typeAliases>
+
   <mappers>
     <mapper resource="com/blog/mapping/UserMapper.xml"/>
   </mappers>
