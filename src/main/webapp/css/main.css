@@ -88,7 +88,7 @@ blockquote {
 	margin: 10px;
  	padding: 10px 10px 10px 35px;
     border: 1px solid #f2f2f2;
-  	background: #FAFAFA url(quote.gif) no-repeat 10px 12px;
+  	background: #FAFAFA url(../images/quote.gif) no-repeat 10px 12px;
 }
 
 /* form elements */
@@ -151,7 +151,7 @@ form.search input.button {
 -------------------------------------------- */
 #wrap {
 	width: 833px;
-	background: url(bg.jpg) repeat-y center top;
+	background: url(../images/bg.jpg) repeat-y center top;
 	margin: 0 auto;
 	text-align: left;
 }
@@ -166,7 +166,7 @@ form.search input.button {
 	position: relative;
 	width: 833px;
 	height: 100px;
-	background: #FFF url(header.jpg) no-repeat center top;
+	background: #FFF url(../images/header.jpg) no-repeat center top;
 	margin: 0; padding: 0;
 	font-size: 14px;
 	color: #FFF;
@@ -203,7 +203,7 @@ form.search input.button {
 	clear: both;
 	width: 833px;
 	height: 30px;
-	background: #FFF url(menubg.jpg) repeat-y;
+	background: #FFF url(../images/menubg.jpg) repeat-y;
 	margin: 0;
 	font: bolder 12px/30px 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, Sans-Serif;
 }
@@ -240,7 +240,7 @@ form.search input.button {
 #main h1 {
 	color: #667F99; 
 	border-bottom: 1px solid #CCCCCC;
-	background: #F6F6F6 url(arrow.gif) no-repeat 5px 10px;
+	background: #F6F6F6 url(../images/arrow.gif) no-repeat 5px 10px;
 	padding: 5px 0 5px 20px;
 	margin: 10px 10px 0 10px;
 }
@@ -252,15 +252,15 @@ form.search input.button {
 	font-size: 95%;	
 }
 .post-footer .date {
-	background: url(clock.gif) no-repeat left center;
+	background: url(../images/clock.gif) no-repeat left center;
 	padding-left: 20px; margin: 0 10px 0 5px;
 }
 .post-footer .comments {
-	background: url(comment.gif) no-repeat left center;
+	background: url(../images/comment.gif) no-repeat left center;
 	padding-left: 20px; margin: 0 10px 0 5px;
 }
 .post-footer .readmore {
-	background: url(page.gif) no-repeat left center;
+	background: url(../images/page.gif) no-repeat left center;
 	padding-left: 20px; margin: 0 10px 0 5px;
 }
 
@@ -286,7 +286,7 @@ form.search input.button {
 }
 #sidebar ul.sidemenu li {
 	border-bottom: 1px solid #EFF0F1;
-	background: url(bullet.gif) no-repeat 2px 5px ;
+	background: url(../images/bullet.gif) no-repeat 2px 5px ;
 	padding: 3px 0 3px 25px;
 	margin: 0 2px;			 
 }
@@ -309,7 +309,7 @@ form.search input.button {
 	clear: both;
 	color: #66737B;
 	font: normal 90% 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, Sans-Serif;
-	background: #FFF url(footerbg.jpg) no-repeat center top;	
+	background: #FFF url(../images/footerbg.jpg) no-repeat center top;	
 	width: 833px;
 	height: 60px;
 	text-align: center;
