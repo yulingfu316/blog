@@ -4,11 +4,11 @@
 <html>
 
 <head>
-<title>SimpleBlog</title>
+<title>单行博客</title>
 
 <meta name="author" content="Yuling Fu"/>
 <meta name="description" content="This is a blog site."/>
-<meta name="keywords" content="blog"/>
+<meta name="keywords" content="blog,博客,单行"/>
 <!-- <meta name="robots" content="index, follow, noarchive" />
 <meta name="googlebot" content="noarchive" /> -->
 
@@ -22,36 +22,10 @@
 	<div id="wrap">
 
 		<!-- Header -->
-		<div id="header">
-
-			<h1 id="logo">
-				Simple<span class="gray">Blog</span>
-			</h1>
-			<h2 id="slogan">Put your site slogan here...</h2>
-
-			<div id="searchform">
-				<form method="post" class="search" action="#">
-					<p>
-						<input name="search_query" class="textbox" type="text" /> <input
-							name="search" class="button" type="submit" value="search" />
-					</p>
-				</form>
-			</div>
-
-		</div>
+    <jsp:include page="common/header.jsp"/>
 
 		<!-- menu -->
-		<div id="menu">
-			<ul>
-				<li id="current"><a href="index.html"><span>Home</span></a></li>
-				<li><a href="index.html"><span>Archives</span></a></li>
-				<li><a href="index.html"><span>Downloads</span></a></li>
-				<li><a href="index.html"><span>Services</span></a></li>
-				<li><a href="index.html"><span>Support</span></a></li>
-				<li><a href="index.html"><span>About</span></a></li>
-			</ul>
-		</div>
-
+		<jsp:include page="common/menu.jsp"/>
 
 		<!--Content Wrap -->
 		<div id="content-wrap">
@@ -188,10 +162,9 @@
 		</div>
 
 		<!-- Footer -->
-		<jsp:include page="common/footer.jsp"></jsp:include>
+		<jsp:include page="common/footer.jsp"/>
 
-		<!-- END Wrap -->
 	</div>
-
+  <!-- End Wrap -->
 </body>
 </html>
