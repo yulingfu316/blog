@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <div id="header">
 
 	<h1 id="logo">
-		<spring:message code="name" text="One-way"/><span class="gray"> Blog</span>
+		<spring:message code="name" text="One-way"></spring:message><span class="gray"> Blog</span>
 	</h1>
-	<h2 id="slogan">One-way life, welcome to One-way Blog.</h2>
+	<h2 id="slogan">One-way life, welcome to One-way Blog.${email}</h2>
 
 	<div id="searchform">
 		<form method="post" class="search" action="#">

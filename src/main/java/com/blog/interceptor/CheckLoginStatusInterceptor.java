@@ -1,7 +1,5 @@
 package com.blog.interceptor;
 
-import java.io.IOException;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,8 +11,11 @@ import org.springframework.web.servlet.ModelAndView;
 import com.blog.dao.IUserDao;
 import com.blog.model.User;
 import com.blog.util.CookieTool;
-
-public class AuthorizedHandlerInterceptor implements HandlerInterceptor {
+/**
+ * 通过cookie检查用户是否登录，已登录则将用户名设置到request中
+ * @author ylfu
+ */
+public class CheckLoginStatusInterceptor implements HandlerInterceptor {
 	@Autowired
 	private IUserDao userDao;
 	
@@ -54,70 +55,30 @@ public class AuthorizedHandlerInterceptor implements HandlerInterceptor {
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler) throws Exception {
 		String uri = request.getRequestURI();
-		// 注册页面、登陆页面、注册请求、登录请求不拦截
-		if (uri.indexOf("login_form") != -1 || uri.indexOf("register_form") != -1 
-				|| uri.indexOf("login") != -1 || uri.indexOf("register") != -1) {
-			return true;
-		}
-
 		// 设置不拦截的对象
-		String[] noFilters = new String[] { "logOn", "index" }; // 对登录本身的页面以及业务不拦截
-		boolean beFilter = true;
+		String[] noFilters = new String[]{"login_form", "register_form", "login", "register"};
 		for (String s : noFilters) {
 			if (uri.indexOf(s) != -1) {
-				beFilter = false;
-				break;
+				return true;
 			}
 		}
-
-		if (beFilter == true) {// 除了不拦截的对象以外
-			String path = request.getContextPath();
-			String basePath = request.getScheme() + "://"
-					+ request.getServerName() + ":" + request.getServerPort()
-					+ path + "/";
-
-			User u = (User) request.getSession().getAttribute(
-					"user");
-			if (u == null) {// 未登录
-				response.sendRedirect(basePath + "self/logOn.do");
-				return false;
-			} else {// 已经登录，判断他是否登录前勾选了记住密码
-				Cookie cokLoginName = CookieTool.getCookieByName(request,
-						"loginName");
-				Cookie cokLoginPwd = CookieTool.getCookieByName(request,
-						"loginPwd");
-				if (cokLoginName != null && cokLoginPwd != null
-						&& cokLoginName.getValue() != null
-						&& cokLoginPwd.getValue() != null) {
-					String email = cokLoginName.getValue();
-					String password = cokLoginPwd.getValue();
-					// 检查到客户端保存了用户的密码，进行该账户的验证
-					User user = userDao.findByEmailAndPassword(email, password);
-					if (user == null) {
-						CookieTool.addCookie(response, "loginName", null, 0); // 清除Cookie
-						CookieTool.addCookie(response, "loginPwd", null, 0); // 清除Cookie
-						try {
-							response.sendRedirect(basePath + "self/logOn.do");
-							return false;
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-						request.getSession().setAttribute("errorInfo", "请登录！");
-					}
-					/*
-					 * // 如果账户验证成功，则跳转到点击的页面 else if
-					 * ("10".equals(users.getUserrole())) {
-					 * request.getSession().setAttribute("utcUsers", users); str
-					 * = "/WEB-INF/jsp/Administrator.jsp";
-					 * response.sendRedirect(str); } else { //
-					 * 将UtcUsers放到session中
-					 * request.getSession().setAttribute("utcUsers", users); str
-					 * = "/WEB-INF/jsp/self/index.jsp";
-					 * response.sendRedirect(str); }
-					 */
+/*		String basePath = request.getScheme() + "://" + request.getServerName() 
+				+ ":" + request.getServerPort() + request.getContextPath() + "/";*/
+		Cookie emailCookie = CookieTool.getCookieByName(request, "email");
+		Cookie passwordCookie = CookieTool.getCookieByName(request, "password");
+		if (emailCookie != null && passwordCookie != null) {
+			String email = emailCookie.getValue();
+			String password = passwordCookie.getValue();
+			if (email != null && null != password) {
+				// 检查到客户端保存了用户的密码，进行该账户的验证
+				User user = userDao.findByEmailAndPassword(email, password);
+				if (user == null) {
+					CookieTool.addCookie(response, "email", null, 0); // 清除Cookie
+					CookieTool.addCookie(response, "password", null, 0); // 清除Cookie
+				}else{
+					request.setAttribute("user.email", user.getEmail());
 				}
 			}
-
 		}
 		return true;
 	}

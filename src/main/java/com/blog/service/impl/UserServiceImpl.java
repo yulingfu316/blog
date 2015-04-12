@@ -24,7 +24,12 @@ public class UserServiceImpl implements UserService {
 		int row = userDao.insertOne(user);
 		return row;
 	}
-	
-	
 
+	@Override
+	public User findUserByEmailAndPassword(String email, String password) {
+		String md5Password = password;
+		User user = userDao.findByEmailAndPassword(email, md5Password);
+		return user;
+	}
+	
 }
