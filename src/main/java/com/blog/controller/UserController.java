@@ -12,12 +12,13 @@ import com.blog.model.User;
 import com.blog.service.UserService;
 
 @Controller
+@RequestMapping("/account")
 public class UserController {
 	
 	@Resource
 	private UserService userService;
 	
-	@RequestMapping(value="/login_form", method=RequestMethod.GET)
+	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String loginForm(@RequestParam(value="email", required=false) String email, ModelMap model) {
 		if (email != null && !"".equals(email)) {
 			model.addAttribute("email", email);
@@ -25,7 +26,7 @@ public class UserController {
 		return "user/login_form";
 	}
 	
-	@RequestMapping(value="/login", method=RequestMethod.GET)
+	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String login(@RequestParam String email, @RequestParam String password, 
 			@RequestParam String uri, ModelMap model) {
 		User user = userService.findUserByEmailAndPassword(email, password);

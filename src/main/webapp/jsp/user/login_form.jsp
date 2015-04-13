@@ -4,7 +4,7 @@
 <html>
 
 <head>
-<title>单行博客</title>
+<title>One-way Blog</title>
 
 <meta name="author" content="Yuling Fu" />
 <meta name="description" content="This is a blog site." />
@@ -13,9 +13,9 @@
 <meta name="googlebot" content="noarchive" /> -->
 
 <link rel="stylesheet" type="text/css" media="screen"
-	href="css/main.css" />
+	href="../css/main.css" />
 <link rel="stylesheet" type="text/css" media="screen"
-	href="css/login.css">
+	href="../css/login.css">
 
 </head>
 

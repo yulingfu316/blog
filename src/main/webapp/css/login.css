@@ -79,3 +79,12 @@
 .forget-password .forget {
 	text-align: right;
 }
+.header-account {
+  color: white;
+}
+.header-account a {
+	color: white;
+}
+.header-account a:hover {
+	color: black;
+}
