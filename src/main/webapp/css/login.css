@@ -19,11 +19,11 @@
 }
 
 .username {
-	background: url("images/login-locked-icon.png") no-repeat 15px center;
+	background: url("../images/login-locked-icon.png") no-repeat 15px center;
 }
 
 .password {
-	background: url("images/login-key-icon.png") no-repeat 15px center;
+	background: url("../images/login-key-icon.png") no-repeat 15px center;
 }
 
 .checkcode {
@@ -52,6 +52,7 @@
 }
 
 .forget-password {
+	width: 60%;
 	margin-top: 10px;
 	color: #999;
 	font-size: 1em;
@@ -79,12 +80,6 @@
 .forget-password .forget {
 	text-align: right;
 }
-.header-account {
-  color: white;
-}
-.header-account a {
-	color: white;
-}
-.header-account a:hover {
-	color: black;
+.forget-password .rememberMe {
+	width: 40%;
 }

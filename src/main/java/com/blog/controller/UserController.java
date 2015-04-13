@@ -7,6 +7,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.blog.model.User;
 import com.blog.service.UserService;
@@ -35,6 +36,12 @@ public class UserController {
 		} else {
 			return "redirect:/login_form/"+email;
 		}
+	}
+	
+	@RequestMapping(value="/checkcode", method=RequestMethod.GET)
+	@ResponseBody
+	public void checkcode() {
+		
 	}
 	
 }

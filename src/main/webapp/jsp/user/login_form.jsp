@@ -11,12 +11,10 @@
 <meta name="keywords" content="blog,博客,单行" />
 <!-- <meta name="robots" content="index, follow, noarchive" />
 <meta name="googlebot" content="noarchive" /> -->
-
-<link rel="stylesheet" type="text/css" media="screen"
-	href="../css/main.css" />
-<link rel="stylesheet" type="text/css" media="screen"
-	href="../css/login.css">
-
+<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+<link rel="stylesheet" type="text/css" href="../css/login.css">
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../js/myjs/common.js"></script>
 </head>
 
 <body>
@@ -35,33 +33,32 @@
 			<div id="main">
 
 				<h1>登录帐号</h1>
-				<form id="loginForm" action="/account/login?ref=${uri}"
-					method="post">
-					用户名 / 邮箱：<input id="username" name="username" tabindex="1"
-						class="username" type="text" value="" /> 密码：<input id="password"
-						name="password" tabindex="2" class="password" type="password"
-						value="" /> 验证码：<input id="checkcode" name="checkcode"
-						tabindex="3" class="checkcode" type="text" value="" />
-						
-					<div class="row forget-password">
-						<span class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> <input
-							type="checkbox" name="rememberMe" id="rememberMe" value="true"
-							class="auto-login" tabindex="3" /> <label for="rememberMe">下次自动登录</label>
-						</span> <span
-							class="col-xs-6 col-sm-6 col-md-6 col-lg-6 forget tracking-ad"> 
-							<a href="/account/fpwd?action=forgotpassword&service=http%3A%2F%2Fblog.csdn.net%2Fz69183787%2Farticle%2Fdetails%2F41653875"
-							tabindex="4">忘记密码</a>
+				<form id="loginForm" action="account/login?ref=${uri}" method="post">
+					用户名 / 邮箱：<input id="username" name="username" tabindex="1" class="username" type="text" value=""/>
+					密码：<input id="password" name="password" tabindex="2" class="password" type="password" value=""/>
+					验证码：<input id="checkcode" name="checkcode" tabindex="3" class="checkcode" type="text"/>
+					<img id="checkcode" alt="验证码" src="account/checkcode"><a href="javascript:document.getElemntById('checkcode').src='account/checkcode?time=new Date().getTime()';">看不清？</a>
+					<div class="forget-password">
+						<span class="rememberMe">
+						  <input type="checkbox" name="rememberMe" id="rememberMe" value="true" class="auto-login" tabindex="3" />
+						  <label for="rememberMe" wordwrap="true" autosize="false" dock="fill">下次自动登录</label>
+						</span> 
+						<span class="forget">
+							<a href="javascript:void(0);" tabindex="4">忘记密码</a>
 						</span>
 					</div>
 
-					<input class="loginButton" accesskey="l" value="登 录" tabindex="5"
-						type="button" />
+					<input class="loginButton" accesskey="l" value="登 录" tabindex="5" type="button"/>
 				</form>
 
 			</div>
 
 			<div id="sidebar">
-
+			
+            <form id="searchform" method="post" class="search" action="#">
+                <input name="search_query" class="textbox" type="text"/>
+                <input name="search" class="button" type="submit" value="search"/>
+            </form>
 				<h1>Sidebar Menu</h1>
 				<ul class="sidemenu">
 					<li><a href="index.html">Home</a></li>

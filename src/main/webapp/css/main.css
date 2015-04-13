@@ -135,7 +135,7 @@ form.search {
 }
 form.search input.textbox { 
 	margin: 0; padding: 1px;
-	width: 120px;
+	width: 129px;
 	border: 1px solid #CCC; 
 	background: #FFF;
 	color: #333; 
@@ -171,7 +171,7 @@ form.search input.button {
 	font-size: 14px;
 	color: #FFF;
 }
-#header h1#logo {
+#header #logo {
 	position: absolute;
 	margin: 0; padding: 0;
 	font: bold 30px 'Trebuchet MS', Arial, Sans-serif;
@@ -193,10 +193,10 @@ form.search input.button {
 	/* change the values of top and Left to adjust the position of the slogan*/
 	top: 65px; left:75px;			
 }
-#header #searchform {
+#header #header-account {
 	float: right;
-	padding: 35px 40px 0 0;
-	display: inline;
+  padding: 35px 40px 0 0;
+  display: inline;
 }
 /* menu */
 #menu {
@@ -208,7 +208,7 @@ form.search input.button {
 	font: bolder 12px/30px 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, Sans-Serif;
 }
 #menu ul{
-	margin: 0; padding: 0 0 0 40px;
+	margin: 0; padding: 0 0 0 50px;
 }
 #menu ul li {
 	float: left;
@@ -222,12 +222,11 @@ form.search input.button {
 	color: #FFF;
 }
 #menu ul li a:hover {
-   background: #FFF; 
+  background: #FFF; 
 	color: #333;  
 }
-#menu ul li#current a {	
-	background: #30899F; 
-	color: #FFF;	
+#menu ul li.current a {	
+	color: #333;
 }
 
 /* Main */
@@ -235,7 +234,7 @@ form.search input.button {
 	float: left;	
 	width: 72%;
 	padding: 0;
-    margin: 10px 0 0 0;
+  margin: 10px 0 0 0;
 }
 #main h1 {
 	color: #667F99; 
@@ -269,7 +268,7 @@ form.search input.button {
 	float: right;
 	width: 26%;
 	padding: 0; margin: 10px 0 0 0;
-}	
+}
 #sidebar h1 {
 	margin: 10px 0 0 0; 
 	padding: 5px 10px;
@@ -282,7 +281,7 @@ form.search input.button {
 	text-align: left;
 	margin: 3px 0px 8px 0; padding: 0;
 	text-decoration: none;
-    font-size: .9em;
+  font-size: .9em;
 }
 #sidebar ul.sidemenu li {
 	border-bottom: 1px solid #EFF0F1;
@@ -328,4 +327,12 @@ form.search input.button {
 .clear { clear: both; }
 .gray { color: #CCC; }
 
-
+.header-account {
+  color: white;
+}
+.header-account a {
+  color: white;
+}
+.header-account a:hover {
+  color: black;
+}
