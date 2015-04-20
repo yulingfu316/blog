@@ -16,19 +16,19 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public User findUser(int id) {
-		return userDao.find(id);
+		return userDao.selectByPrimaryKey(id);
 	}
 
 	@Override
 	public int saveUser(User user) {
-		int row = userDao.insertOne(user);
+		int row = userDao.insert(user);
 		return row;
 	}
 
 	@Override
 	public User findUserByEmailAndPassword(String email, String password) {
 		String md5Password = password;
-		User user = userDao.findByEmailAndPassword(email, md5Password);
+		User user = userDao.selectByEmailAndPassword(email, md5Password);
 		return user;
 	}
 	

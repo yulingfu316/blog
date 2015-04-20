@@ -71,7 +71,7 @@ public class CheckLoginStatusInterceptor implements HandlerInterceptor {
 			String password = passwordCookie.getValue();
 			if (email != null && null != password) {
 				// 检查到客户端保存了用户的密码，进行该账户的验证
-				User user = userDao.findByEmailAndPassword(email, password);
+				User user = userDao.selectByEmailAndPassword(email, password);
 				if (user == null) {
 					CookieTool.addCookie(response, "email", null, 0); // 清除Cookie
 					CookieTool.addCookie(response, "password", null, 0); // 清除Cookie
