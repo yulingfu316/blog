@@ -1,0 +1,88 @@
+@CHARSET "UTF-8";
+
+.username, .password, .checkcode {
+	background: #fff;
+	display: block;
+	width: 60%;
+	padding: 8px 0;
+	border: 2px solid #e1e1e1;
+	margin-bottom: 20px;
+	font-weight: normal;
+	text-indent: 43px;
+	outline: 0;
+	font-size: 1.25em;
+	*line-height: 20px;
+}
+
+.username:focus, .password:focus, .checkcode:focus {
+	border: 2px solid #d6f1ff;
+}
+
+.username {
+	background: url("../images/login-locked-icon.png") no-repeat 15px center;
+}
+
+.password {
+	background: url("../images/login-key-icon.png") no-repeat 15px center;
+}
+
+.checkcode {
+	margin-bottom: 0;
+}
+
+.loginButton {
+	background: #bfbfbf;
+	display: block;
+	height: 44px;
+	line-height: 44px;
+	color: #1e90ff;
+	text-align: center;
+	margin-top: 20px;
+	font-size: 1.5em;
+	text-decoration: none;
+	clear: both;
+	width: 60%;
+	border: none;
+}
+
+.loginButton:hover {
+	background: #7f7f7f;
+	color: #1e90ff;
+	text-decoration: none;
+}
+
+.forget-password {
+	width: 60%;
+	margin-top: 10px;
+	color: #999;
+	font-size: 1em;
+	*padding: 0 10px;
+}
+
+.forget-password span {
+	*padding: 0;
+}
+
+.forget-password input {
+	margin-right: 10px;
+	border: 1px solid #ccc;
+}
+
+.forget-password a {
+	color: #999;
+	text-decoration: none;
+}
+
+.forget-password a:hover {
+	text-decoration: underline;
+}
+
+.forget-password .forget {
+	text-align: right;
+}
+.forget-password .rememberMe {
+	width: 40%;
+}
+.errorMsg {
+	color: #ff0000;
+}

@@ -30,7 +30,7 @@
   </bean>
   <!-- 视图模型配置 -->
   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="prefix" value="/jsp/"/>
+    <property name="prefix" value="/WEB-INF/jsp/"/>
     <property name="suffix" value=".jsp"/>
     <!-- <property name="view" value="org.springframework.web.servlet.view.JstlView"/> -->
   </bean>

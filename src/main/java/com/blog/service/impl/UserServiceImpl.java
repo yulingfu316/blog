@@ -26,9 +26,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User findUserByEmailAndPassword(String email, String password) {
-		String md5Password = password;
-		User user = userDao.selectByEmailAndPassword(email, md5Password);
+	public User findUserByEmail(String email) {
+		User user = userDao.selectByEmail(email);
 		return user;
 	}
 	

@@ -12,7 +12,7 @@ public interface IUserDao {
 
     User selectByPrimaryKey(Integer id);
     
-    User selectByEmailAndPassword(String email, String password);
+    User selectByEmail(String email);
 
     int updateByPrimaryKeySelective(User record);
 
